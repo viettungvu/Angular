@@ -1,0 +1,44 @@
+<div class="card">
+    <div class="card-headerd-flex justify-content-between">
+        <button class="btn btn-sm btn-primary">
+            <i class="pi pi-search"></i>
+            New
+        </button>
+        <form class="search-box">
+            <div class="form-group">
+                <input type="text" pInputText>
+                <button class="btn btn-sm btn-primary">Search</button>
+            </div>
+        </form>
+    </div>
+    <div class="card-body">
+       <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Action</th>
+                </tr>
+            </thead>  
+            <tbody>
+                <tr *ngFor="let p of products">
+                    <td>{{ p.id }} </td>
+                    <td>{{ p.name }} </td>
+                    <td>{{ p.price }} </td>
+                    <td>
+                        <button class="btn btn-sm btn-outline-success" routerLink="/product/{{p.id}}/details" (click)="getById(p.id)">Details</button>
+                    </td>
+                </tr>
+            </tbody> 
+        </table>
+       </div>
+    </div>
+    <div class="card-footer d-flex justify-content-between">
+        <span>Showing 1 to 10 of 100 entries</span>
+        <div class="pagination">
+            Chỗ này phân trang
+        </div>
+    </div>
+</div>

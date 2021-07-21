@@ -1,0 +1,21 @@
+<form [formGroup]="createForm" (ngSubmit)="create(createForm.value)">
+    <div class="form-group">
+        <label for="title">title</label>
+        <input type="text" name="title" id="title" formControlName='title' class="form-control">
+        <div class="error-message" *ngIf="createForm.controls.title?.errors && createForm.controls.title.touched">
+            <span class="text-danger" *ngIf="createForm.controls.title.errors?.minlength">Title is at least 10 chracters</span>
+            <span class="text-danger" *ngIf="createForm.controls.title.errors?.required">Title should not be blank</span>
+            <span class="text-danger" *ngIf="createForm.controls.title.errors?.maxlength">Title is at not over 50 chracters</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="title">description</label>
+        <input type="text" name="description" id="description" formControlName='description' class="form-control">
+        <div class="error-message" *ngIf="!createForm.valid && createForm.controls.description.touched">
+            <span class="text-danger" *ngIf="createForm.controls.description.errors?.required">Description should not be blank</span>            
+        </div>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-primary" type="submit" [disabled]="!createForm.valid">Submit</button>
+    </div>
+</form>

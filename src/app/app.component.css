@@ -1,0 +1,9 @@
+.nav-link{
+    color: aliceblue;
+}
+.nav-item{
+    color: #fff !important;;
+}
+.active{
+    color: blue;
+}

@@ -1,0 +1,36 @@
+
+<div class="card mt-3">
+    <div class="card-headerd-flex justify-content-between">                 
+        <app-post-create (newPostEvent)="create($event)"></app-post-create>       
+    </div>
+    <div class="card-body">
+       <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>details</th>
+                    <th>Action</th>
+                </tr>
+            </thead>  
+            <tbody>
+                <tr *ngFor="let p of posts">
+                    <td>{{ p.id }} </td>
+                    <td>{{ p.title }} </td>
+                    <td>{{ p.description }} </td>
+                    <td>
+                        <button class="btn btn-sm btn-outline-danger" (click)="delete(p.id)">delete</button>
+                    </td>
+                </tr>
+            </tbody> 
+        </table>
+       </div>
+    </div>
+    <div class="card-footer d-flex justify-content-between">
+        <span>Showing 1 to 10 of 100 entries</span>
+        <div class="pagination">
+            Chỗ này phân trang
+        </div>
+    </div>
+</div>

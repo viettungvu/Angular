@@ -1,0 +1,9 @@
+[
+    {"id":1, "name":"Samsung Galaxy M5",  "price":12000 },
+    {"id":2, "name":"Iphone 11 Pro Max",  "price":12000 },
+    {"id":3, "name":"Samsung S20 Ultra",  "price":12000 },
+    {"id":4, "name":"Vinsmart Aris",  "price":12000 },
+    {"id":5, "name":"Xiaomi Redmi Note 10",  "price":12000 },
+    {"id":6, "name":"Iphone 8 Plus",  "price":12000 },
+    {"id":7, "name":"Samsung Galaxy Note 10",  "price":12000 }
+]
