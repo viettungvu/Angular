@@ -10,11 +10,11 @@ import {Observable} from "rxjs";
 export class AuthTokenInterceptor implements HttpInterceptor {
   constructor() {}
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    var authString = localStorage.getItem('auth') as string;
-    var auth = JSON.parse(authString);
+    var authString = localStorage.getItem('token') as string;
+    //var auth = JSON.parse(authString);
 
     let modifiedReq = request.clone({
-      params: request.params.append('auth', auth.idToken),
+      params: request.params.append('token', authString),
     });
     return next.handle(modifiedReq);
   }

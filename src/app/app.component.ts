@@ -1,5 +1,5 @@
+import { AuthService } from './authenticate/auth.service';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -8,10 +8,12 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class AppComponent implements OnInit{
   title = 'ECommerSolution';
-  topics=['Angular', 'React', 'Vue'];
-  constructor(private fb:FormBuilder){}
+ 
+  constructor(private authService:AuthService){}
   ngOnInit(){
-
+    this.authService.authenticate("viettungtvhd@gmail.com", "viettungtvhd@123").subscribe(
+      (res)=>{localStorage.setItem('token', res.idToken); console.log(res.idToken)}
+    )
   }
 
 }

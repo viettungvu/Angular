@@ -1,3 +1,4 @@
+import { AuthTokenInterceptor } from './authenticate/interceptor/token-interceptor';
 import { ProductService } from './product-list/product.service';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -26,7 +27,11 @@ import { PostCreateComponent } from './post/post-create/post-create.component';
     InputTextModule,
     ReactiveFormsModule
   ],
-  providers: [ProductService],
+  providers: [ProductService, {
+    provide:HTTP_INTERCEPTORS,
+    useClass: AuthTokenInterceptor,
+    multi:true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
